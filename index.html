@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT Learning Hub – All Free Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="All-in-one IT Learning Hub with free programming resources, AI tools, roadmaps, books and courses.">
+  <style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+/* ===== COLOR SYSTEM ===== */
+:root{
+--bg:#0f172a;
+--text:#e5e7eb;
+--card:#1e293b;
+--primary:#38bdf8;
+--accent:#22c55e;
+}
+
+body.light{
+--bg:#f8fafc;
+--text:#0f172a;
+--card:#ffffff;
+}
+
+/* ===== BODY ===== */
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+/* ===== LINKS ===== */
+a{
+color:var(--primary);
+text-decoration:none;
+font-weight:500;
+}
+a:hover{
+text-decoration:underline;
+}
+
+/* ===== LOGIN PAGE ===== */
+.center{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:15px;
+}
+.center input{
+padding:10px;
+width:260px;
+border-radius:6px;
+border:none;
+}
+.center button{
+padding:10px 16px;
+border:none;
+border-radius:6px;
+background:var(--primary);
+color:#000;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* ===== HEADER ===== */
+header{
+position:sticky;
+top:0;
+z-index:10;
+background:var(--card);
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+header h2{
+color:var(--primary);
+}
+nav{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+nav a{
+padding:6px 8px;
+}
+nav button{
+border:none;
+background:var(--primary);
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* ===== SECTIONS ===== */
+section{
+padding:50px 20px;
+max-width:1100px;
+margin:auto;
+}
+section h2{
+margin-bottom:20px;
+color:var(--primary);
+}
+
+/* ===== LISTS ===== */
+ul{
+list-style:none;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:12px;
+}
+ul li{
+background:var(--card);
+padding:12px;
+border-radius:8px;
+transition:0.3s;
+}
+ul li:hover{
+transform:translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+color:#94a3b8;
+margin-top:40px;
+}
+
+/* ===== HIDDEN ===== */
+.hidden{
+display:none;
+}
+
+/* ===== FEEDBACK ===== */
+#feedback textarea,
+#feedback input,
+#feedback select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:none;
+}
+
+#feedback button{
+background:var(--accent);
+color:#000;
+padding:10px;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.feedback-item{
+background:var(--card);
+padding:12px;
+border-radius:8px;
+margin-top:10px;
+}
+/* ===== existing CSS ===== */
+
+/* 👇 AI Tools CSS (yahin paste karo) */
+#ai-tools {
+padding: 40px;
+background: #f5f7fa;
+}
+
+#ai-tools h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.tool-card {
+background: #fff;
+padding: 20px;
+margin: 15px auto;
+max-width: 600px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tool-card a {
+background: #007bff;
+color: white;
+padding: 8px 14px;
+border-radius: 5px;
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="center">
+  <h2>Login to IT Learning Hub</h2>
+  <input id="username" placeholder="Enter your name">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- APP -->
+<div id="app" class="hidden">
+
+<header>
+  <h2>IT Learning Hub</h2>
+  <nav>
+    <a href="#programming">Programming</a>
+    <a href="#books">Free Books</a>
+    <a href="#ai">AI & ML</a>
+    <a href="#roadmaps">Roadmaps</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#github">GitHub</a>
+    <button onclick="toggleTheme()">🌙</button>
+    <button onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<section id="welcome">
+  <h3>Welcome, <span id="user"></span> 👋</h3>
+  <p>One place for all IT & CS learning resources.</p>
+</section>
+
+<section id="programming">
+  <h2>💻 Programming & Development</h2>
+  <ul>
+    <li><a href="https://html.com" target="_blank">HTML</a></li>
+    <li><a href="https://css-tricks.com" target="_blank">CSS</a></li>
+    <li><a href="https://javascript.info" target="_blank">JavaScript</a></li>
+    <li><a href="https://python.org/doc" target="_blank">Python</a></li>
+    <li><a href="https://react.dev" target="_blank">React</a></li>
+    <li><a href="https://nodejs.dev/learn" target="_blank">Node.js</a></li>
+    <li><a href="https://learn.mongodb.com" target="_blank">MongoDB</a></li>
+    <li><a href="https://git-scm.com" target="_blank">Git</a></li>
+  </ul>
+</section>
+
+<section id="books">
+  <h2>📚 Free Books & PDFs</h2>
+  <ul>
+    <li><a href="https://www.gutenberg.org" target="_blank">Project Gutenberg</a></li>
+    <li><a href="https://openlibrary.org" target="_blank">Open Library</a></li>
+    <li><a href="https://libgen.is" target="_blank">LibGen</a></li>
+    <li><a href="https://www.pdfdrive.com" target="_blank">PDF Drive</a></li>
+    <li><a href="https://annas-archive.org" target="_blank">Anna’s Archive</a></li>
+    <li><a href="https://z-lib.org" target="_blank">Z-Library</a></li>
+  </ul>
+</section>
+
+<section id="ai">
+  <h2>🤖 AI & Machine Learning</h2>
+  <ul>
+    <li><a href="https://huggingface.co/learn" target="_blank">HuggingFace Courses</a></li>
+    <li><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Google ML Crash Course</a></li>
+    <li><a href="https://learn.nvidia.com" target="_blank">NVIDIA AI Courses</a></li>
+    <li><a href="https://deeplearning.ai" target="_blank">DeepLearning.AI</a></li>
+    <li><a href="https://learnprompting.org" target="_blank">Prompt Engineering</a></li>
+  </ul>
+</section>
+
+<section id="roadmaps">
+  <h2>🗺️ Learning Roadmaps</h2>
+  <!-- roadmaps content same as you sent -->
+</section>
+
+<section id="youtube">
+  <h2>🎥 YouTube Learning</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/@freecodecamp" target="_blank">freeCodeCamp</a></li>
+    <li><a href="https://www.youtube.com/@TraversyMedia" target="_blank">Traversy Media</a></li>
+    <li><a href="https://www.youtube.com/@BroCodez" target="_blank">BroCode</a></li>
+    <li><a href="https://www.youtube.com/@mitocw" target="_blank">MIT OpenCourseWare</a></li>
+  </ul>
+</section>
+
+<section id="github">
+  <h2>📦 GitHub Resources</h2>
+  <ul>
+    <li><a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank">Developer Roadmap</a></li>
+    <li><a href="https://github.com/TheAlgorithms" target="_blank">The Algorithms</a></li>
+    <li><a href="https://github.com/practical-tutorials/project-based-learning" target="_blank">Project Based Learning</a></li>
+  </ul>
+</section>
+
+<section id="feedback">
+  <h2>💬 Student Feedback</h2>
+  <div class="card">
+    <input id="fbName" placeholder="Your Name">
+    <textarea id="fbText" placeholder="Write your feedback..."></textarea>
+    <select id="fbRating">
+      <option value="">Rating</option>
+      <option value="⭐">⭐</option>
+      <option value="⭐⭐">⭐⭐</option>
+      <option value="⭐⭐⭐">⭐⭐⭐</option>
+      <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+      <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+    </select>
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+
+  <div id="feedbackList" class="hidden"></div>
+  <button onclick="openAdmin()">View Feedback (Admin)</button>
+</section>
+<section id="ai-tools">
+  <h2>AI Tools for IT & Computer Science Students</h2>
+
+  <div class="tool-card">
+    <h3>ChatGPT</h3>
+    <p>Coding help, errors aur project ideas ke liye.</p>
+    <a href="https://chat.openai.com" target="_blank">Use Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>GitHub Copilot</h3>
+    <p>Code likhne me AI suggestion deta hai.</p>
+    <a href="https://github.com/features/copilot" target="_blank">Use Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>Google Gemini</h3>
+    <p>Concept samajhne ke liye best.</p>
+    <a href="https://gemini.google.com" target="_blank">Use Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>Canva AI</h3>
+    <p>PPT, resume aur presentation ke liye.</p>
+    <a href="https://www.canva.com" target="_blank">Use Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>Notion AI</h3>
+    <p>Notes aur planning ke liye.</p>
+    <a href="https://www.notion.so/product/ai" target="_blank">Use Tool</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 IT Learning Hub – Built for Students
+</footer>
+<script>
+const loginPage = document.getElementById("loginPage");
+const app = document.getElementById("app");
+const userSpan = document.getElementById("user");
+
+// ===== LOGIN FUNCTION =====
+function login() {
+const username = document.getElementById("username").value.trim();
+if (username === "") {
+alert("Please enter your name");
+return;
+}
+localStorage.setItem("it_user", username);
+showApp();
+}
+
+// ===== SHOW APP =====
+function showApp() {
+loginPage.classList.add("hidden");
+app.classList.remove("hidden");
+userSpan.innerText = localStorage.getItem("it_user");
+}
+
+// ===== LOGOUT =====
+function logout() {
+localStorage.removeItem("it_user");
+location.reload();
+}
+
+// ===== THEME TOGGLE =====
+function toggleTheme() {
+document.body.classList.toggle("light");
+const theme = document.body.classList.contains("light") ? "light" : "dark";
+localStorage.setItem("theme", theme);
+}
+
+// ===== LOAD SAVED DATA =====
+window.onload = () => {
+if (localStorage.getItem("it_user")) {
+showApp();
+}
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+document.body.classList.add("light");
+}
+};
+
+// ===== FEEDBACK FEATURE =====
+function submitFeedback(){
+const name = document.getElementById("fbName").value.trim();
+const text = document.getElementById("fbText").value.trim();
+const rating = document.getElementById("fbRating").value;
+
+if(name === "" || text === "" || rating === ""){
+alert("Please fill all fields");
+return;
+}
+
+const feedback = { name, text, rating };
+let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+feedbacks.unshift(feedback);
+localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+loadFeedback();
+}
+
+function loadFeedback(){
+const list = document.getElementById("feedbackList");
+if(!list) return;
+
+list.innerHTML = "";
+const feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+
+feedbacks.forEach(fb => {
+const div = document.createElement("div");
+div.className = "feedback-item";
+div.innerHTML = `<b>${fb.name}</b> ${fb.rating}<br>${fb.text}`;
+list.appendChild(div);
+});
+}
+
+loadFeedback();
+
+// ===== ADMIN FEEDBACK VIEW =====
+function openAdmin(){
+const pass = prompt("Enter admin password");
+if(pass === "admin123"){
+document.getElementById("feedbackList").classList.remove("hidden");
+loadFeedback();
+} else {
+alert("Wrong password");
+}
+}
+</script>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
